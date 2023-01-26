@@ -1,5 +1,7 @@
 ## Go gRPC Demo
 
+Basic demo of the gRPC client - server communication modes in Go.
+
 ### gRPC client - server communication modes:
 
 - Unary (request-request RPC)
@@ -9,13 +11,13 @@
 
 ## Setting up demo
 
-- Clone repo
+Clone repo:
 
 ```
 $ git clone https://github.com/jesseinvent/go-grpc-demo
 ```
 
-- Install Go Protoc Compiler (Mac)
+Install Go Protoc Compiler (Mac)
 
 ```
 $ brew install protoc-gen-go
@@ -25,13 +27,15 @@ $ brew install protoc-gen-go
 $ brew install protoc-gen-go-grpc
 ```
 
-- Compile Proto file
+[Click to download for other OS](https://grpc.io/docs/protoc-installation/)
+
+Compile Proto file:
 
 ```
 $ protoc --go_out=. --go-grpc_out=. proto/greet.proto
 ```
 
-- Install packages
+Install packages:
 
 ```
 $ go mod download
@@ -40,3 +44,17 @@ $ go mod download
 ```
 $ go mod tidy
 ```
+
+Run server:
+```
+$ cd server
+$ go run main.go
+```
+
+Run client:
+```
+$ cd client
+$ go run main.go
+```
+
+`Note: Run both server and client processes on different terminal windows` 
